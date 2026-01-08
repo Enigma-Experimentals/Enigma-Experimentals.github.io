@@ -1,0 +1,119 @@
+---
+
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+---
+
+
+<Layout>
+	<Hero>
+
+		<h1>Development Rates</h1>
+		<hr>
+		<p class="date">Last updated: {new Date().toLocaleDateString()}</p>
+	</Hero>
+
+	<div class="rates-container">
+		<div class="rates-content">
+			<h2>Our Pricing Structure</h2>
+
+			<div class="rate-card">
+				<h3>Hourly Rate</h3>
+				<div class="rate-value">$1.50/hour</div>
+				<p>Charged for actual development time spent on your project.</p>
+			</div>
+
+			<div class="rate-card">
+				<h3>Free Demo</h3>
+				<div class="rate-value">1 Free Hour</div>
+				<p>Get a complimentary hour to discuss your project requirements and see our approach.</p>
+			</div>
+
+			<div class="rate-card">
+				<h3>Downpayment</h3>
+				<div class="rate-value">10%</div>
+				<p>Required to initiate project development and secure your project slot.</p>
+			</div>
+		</div>
+
+		<div class="disclaimer-box">
+			<h3>Important Notice</h3>
+			<p><strong>Disclaimer:</strong> All prices and rates are subject to change without notice. Rates may be adjusted based on project complexity, timeline, and current market conditions. Please contact us for the most up-to-date pricing information before starting any project.</p>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.rates-container {
+		padding: 40px 20px;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.rates-content {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 30px;
+		margin-bottom: 40px;
+	}
+
+	.rate-card {
+		background: #f8fafc;
+		padding: 30px;
+		border-radius: 12px;
+		border: 1px solid #e2e8f0;
+		text-align: center;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.rate-card:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+
+	.rate-card h3 {
+		margin: 0 0 15px 0;
+		color: #1e293b;
+		font-size: 1.2rem;
+	}
+
+	.rate-value {
+		font-size: 2rem;
+		font-weight: bold;
+		color: #3b82f6;
+		margin-bottom: 15px;
+		font-family: 'Courier New', monospace;
+	}
+
+	.rate-card p {
+		margin: 0;
+		color: #64748b;
+		line-height: 1.5;
+	}
+
+	.disclaimer-box {
+		background: #fff3cd;
+		border: 1px solid #ffeaa7;
+		border-radius: 8px;
+		padding: 20px;
+	}
+
+	.disclaimer-box h3 {
+		margin: 0 0 10px 0;
+		color: #856404;
+		font-size: 1.1rem;
+	}
+
+	.disclaimer-box p {
+		margin: 0;
+		color: #856404;
+		line-height: 1.6;
+	}
+
+	/* Responsive Design */
+	@media (max-width: 768px) {
+		.rates-content {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

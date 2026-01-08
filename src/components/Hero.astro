@@ -1,0 +1,58 @@
+---
+
+---
+
+
+<div class="Hero-container">
+    <div class="Hero-content">
+        <slot></slot>
+    </div>
+</div>
+
+
+<style lang="less" is:global>
+    .Hero-container{
+        height: calc(100vh - 150px);
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        font-size: 24px;
+
+        background-image: url('/images/stars.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6{
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .Hero-content{
+        animation: wave 4s ease-in-out infinite;
+    }
+
+    @keyframes wave {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-5px);
+        }
+    }
+
+
+    
+
+</style>

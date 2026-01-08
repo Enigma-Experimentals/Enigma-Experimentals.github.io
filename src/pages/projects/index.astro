@@ -1,0 +1,105 @@
+---
+
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
+---
+
+
+<Layout>
+    <div id="projects-grid">
+        <div id="lefty" class="project-section">
+            <div  id="lefty-content" style="transform: skewY(2deg);">
+                <h2>On Going Projects</h2>
+                <hr>
+                <h4>Work in progress and beta projects</h4>
+            </div>
+        </div>
+        <div id="dividor" class="hazard-background">
+        </div>
+        <div id="righy" class="project-section">
+            <div id="righty-content" style="transform: skewY(-2deg);">
+                <h2>Completed Projects</h2>
+                <hr>
+                <h4>Polished and working</h4>
+            </div>
+        </div>
+
+    </div>
+</Layout>
+
+<style>
+    #projects-grid{
+        display: grid;
+        grid-template-columns: 3fr 30px 3fr;
+        align-items: center;
+        justify-items: center;
+    }
+
+    /* https://codepen.io/hzlo/pen/VweYrLX */
+    .hazard-background {
+        height: 30px;
+        color: white;
+        background-image: repeating-linear-gradient(
+            -25deg,
+            #000,
+            #000 20px,
+            #ffb101 20px,
+            #ffb101 40px
+        );
+    }
+    #dividor{
+        width: 30px;
+        height: calc(100vh - 95px  );
+    }
+    .project-section {
+        width:65%;
+        height: 80%;
+
+        border-radius: 24px;
+        padding: 30px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background: rgb(55, 55, 55);
+        margin: 20px;
+        background-size: cover;
+        background-position: center;
+        background-blend-mode: overlay;
+    }
+
+    #lefty {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://fastly.picsum.photos/id/151/200/300.jpg?blur=5&hmac=qRCXYs-V_VIqpeYElk6KOJH2S6VZ7_nRLqzgFif1oSY');
+    }
+
+    #righy {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://fastly.picsum.photos/id/151/200/300.jpg?blur=5&hmac=qRCXYs-V_VIqpeYElk6KOJH2S6VZ7_nRLqzgFif1oSY');
+    }
+
+        
+    
+
+    .project-section:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Left section (lefty) - slope to the right */
+    #lefty {
+        transform: skewY(-2deg);
+    }
+
+    /* Right section (righy) - slope to the left */
+    #righy {
+        transform: skewY(2deg);
+    }
+
+    /* Reset hover transform to remove skew during interaction */
+    #lefty:hover {
+        transform: skewY(-2deg) translateY(-2px);
+    }
+
+    #righy:hover {
+        transform: skewY(2deg) translateY(-2px);
+    }
+</style>
